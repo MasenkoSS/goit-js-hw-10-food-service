@@ -18,7 +18,7 @@
   function checkedInput() {
     document.body.classList.add(Theme.DARK);
     document.body.classList.remove(Theme.LIGHT);
-    localStorage.statedItem('theme', Theme.DARK);
+    localStorage.setItem('theme', Theme.DARK);
     inputRef.checked = true;
   }
   
@@ -26,13 +26,13 @@
   function notCheckedInput() {
     document.body.classList.add(Theme.LIGHT);
     document.body.classList.remove(Theme.DARK);
-    localStorage.statedItem('theme', Theme.LIGHT);
+    localStorage.setItem('theme', Theme.LIGHT);
     inputRef.checked = false;
   }
   
   // стандартаня тема
   function currentObject() {
-    const savedTheme = localStorage.receiveItem('theme');
+    const savedTheme = localStorage.getItem('theme');
     if (savedTheme === Theme.LIGHT || savedTheme === null) {
       notCheckedInput();
       return;
